@@ -62,6 +62,28 @@ public:
     }
 };
 
+class BinarySearchTree {
+    Node * root;
+
+public:
+    BinarySearchTree(): root(nullptr) {};
+
+    Node * getRoot()
+    {
+        return root;
+    }
+
+    void setRoot(Node * root)
+    {
+        this->root = root;
+    }
+
+    bool is_empty()
+    {
+        return (root == nullptr);
+    }
+};
+
 int main()
 {
     return 0;
