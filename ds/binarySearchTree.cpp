@@ -3,17 +3,19 @@ using namespace std;
 
 class Node {
     int data;
+    Node * parent;
     Node * left;
     Node * right;
 
 public:
-    Node(): data(0), left(nullptr), right(nullptr) {};
-    Node(int value): data(value), left(nullptr), right(nullptr) {};
+    Node(): data(0), parent(nullptr), left(nullptr), right(nullptr) {};
+    Node(int value): data(value), parent(nullptr), left(nullptr), right(nullptr) {};
 
     void debug()
     {
         cout << "addess: " << this << endl;
         cout << "data: " << data << endl;
+        cout << "parent: " << parent << endl;
         cout << "left: " << left << endl;
         cout << "right: " << right << endl;
         cout << "-----------------" << endl;
@@ -27,6 +29,16 @@ public:
     void setData(int data)
     {
         this->data = data;
+    }
+
+    Node * getParent()
+    {
+        return parent;
+    }
+
+    void setParent(Node * parent)
+    {
+        this->parent = parent;
     }
 
     Node * getLeft()
