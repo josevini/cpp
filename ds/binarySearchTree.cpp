@@ -6,7 +6,6 @@ class Node {
     Node * parent;
     Node * left;
     Node * right;
-
 public:
     Node(): data(0), parent(nullptr), left(nullptr), right(nullptr) {};
     Node(int value): data(value), parent(nullptr), left(nullptr), right(nullptr) {};
@@ -64,7 +63,6 @@ public:
 
 class BinarySearchTree {
     Node * root;
-
 public:
     BinarySearchTree(): root(nullptr) {};
 
@@ -81,6 +79,24 @@ public:
     bool is_empty()
     {
         return (root == nullptr);
+    }
+
+    void inorderTreeWalk()
+    {
+        if (this->root) {
+            inorderTreeWalk(this->root->getLeft());
+            cout << root->getData() << " ";
+            inorderTreeWalk(this->root->getRight());
+        }
+    }
+
+    void inorderTreeWalk(Node * node)
+    {
+        if (node) {
+            inorderTreeWalk(node->getLeft());
+            cout << node->getData() << " ";
+            inorderTreeWalk(node->getRight());
+        }
     }
 };
 
