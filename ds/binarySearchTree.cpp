@@ -98,6 +98,28 @@ public:
             inorderTreeWalk(node->getRight());
         }
     }
+
+    Node * search(int data)
+    {
+        if (root == nullptr || root->getData() == data) {
+            return root;
+        } else if (data < root->getData()) {
+            return search(root->getLeft(), data);
+        } else {
+            return search(root->getRight(), data);
+        }
+    }
+
+    Node * search(Node * node, int data)
+    {
+        if (node == nullptr || node->getData() == data) {
+            return node;
+        } else if (data < node->getData()) {
+            return search(node->getLeft(), data);
+        } else {
+            return search(node->getRight(), data);
+        }
+    }
 };
 
 int main()
