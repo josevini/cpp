@@ -120,6 +120,40 @@ public:
             return search(node->getRight(), data);
         }
     }
+
+    Node * maximum(Node * node = nullptr)
+    {
+        Node * current;
+
+        if (node != nullptr) {
+            current = node;
+        } else {
+            current = root;
+        }
+        
+        while (current->getRight()) {
+            current = current->getRight();
+        }
+
+        return current;
+    }
+
+    Node * minimum(Node * node = nullptr)
+    {
+        Node * current;
+
+        if (node != nullptr) {
+            current = node;
+        } else {
+            current = root;
+        }
+
+        while (current->getLeft()) {
+            current = current->getLeft();
+        }
+
+        return current;
+    }
 };
 
 int main()
